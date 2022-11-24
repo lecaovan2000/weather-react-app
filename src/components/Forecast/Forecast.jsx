@@ -7,6 +7,14 @@ import CurrentDay from '../CurrentDay';
 import CurrentDayDescription from '../CurrentDayDescription';
 import UpcomingDaysForecast from '../UpcomingDaysForecast';
 
+const weekListDay = [
+    { name: 'Mon', value: '75', unit: <>&deg;C</> },
+    { name: 'Tue', value: '75', unit: <>&deg;C</> },
+    { name: 'Wed', value: '75', unit: <>&deg;C</> },
+    { name: 'Thu', value: '75', unit: <>&deg;C</> },
+    { name: 'Fri', value: '75', unit: <>&deg;C</> },
+];
+
 const Forecast = () => (
     <Container className={styles.box}>
         <Row>
@@ -18,7 +26,13 @@ const Forecast = () => (
             <Col xs={12} md={8} className="d-flex flex-column justify-content-between">
                 <div>
                     <CurrentDayDescription />
-                    <UpcomingDaysForecast />
+                    <Row md={4} xs={3}>
+                        {weekListDay.map((item, index) => (
+                            <Col key={index} className="d-flex flex-column justify-content-between">
+                                <UpcomingDaysForecast data={item} />
+                            </Col>
+                        ))}
+                    </Row>
                 </div>
             </Col>
         </Row>

@@ -16,8 +16,8 @@ const CurrentDayDescription = () => {
     return (
         <div className="mt-4 mt-md-2">
             <div className="d-flex flex-column mb-2">
-                {nameInfo.map(item => (
-                    <CurrentDayDescriptionItem {...item} key={item} />
+                {nameInfo.map((item, index) => (
+                    <CurrentDayDescriptionItem {...item} key={index} />
                 ))}
             </div>
         </div>
