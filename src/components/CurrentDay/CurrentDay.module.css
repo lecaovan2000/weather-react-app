@@ -5,6 +5,7 @@
 .cardInner {
     z-index: 1;
     height: 600px;
+    width: 100%;
 }
 
 .gradient {
@@ -32,4 +33,10 @@
 
 .weekday {
     width: 100px;
+}
+.customImg {
+    width: 20px;
+}
+.remind {
+    text-align: center;
 }

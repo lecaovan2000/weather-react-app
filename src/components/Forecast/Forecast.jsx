@@ -3,39 +3,71 @@ import { Container, Row, Col } from 'react-bootstrap';
 import styles from './Forecast.module.css';
 import '../../server/firebase';
 import CurrentDay from '../CurrentDay';
-import CurrentDayDescription from '../CurrentDayDescription';
 import UpcomingDaysForecast from '../UpcomingDaysForecast';
+
+import IconNhietDo from '../icons/IconNhietDo';
+import IconBui from '../icons/IconBui';
+import IconDoAm from '../icons/IconDoAm';
 
 import '../../server/firebase';
 import { getDatabase, ref, child, get } from 'firebase/database';
 
 import { useState, useEffect } from 'react';
 
-const weekListDay = [
-    { name: 'Mon', value: '75', unit: <>&deg;C</> },
-    { name: 'Tue', value: '75', unit: <>&deg;C</> },
-    { name: 'Wed', value: '75', unit: <>&deg;C</> },
-    { name: 'Thu', value: '75', unit: <>&deg;C</> },
-    { name: 'Fri', value: '75', unit: <>&deg;C</> },
-    { name: 'Frifdf', value: '75', unit: <>&deg;C</> },
-];
-
 const Forecast = () => {
-    // const [weekListDay, setWeekListDay] = useState([]);
-    // const dbRef = ref(getDatabase());
-    // const fetchData = async () => {
-    //     try {
-    //         const res = await get(child(dbRef, `/`));
-    //         const dataRes = res.val();
-    //         setWeekListDay(dataRes);
-    //         console.log('hihihi', weekListDay);
-    //     } catch (error) {
-    //         console.log(error);
-    //     }
-    // };
-    // useEffect(() => {
-    //     fetchData();
-    // }, [weekListDay]);
+    const [getWeekListDay, setGetWeekListDay] = useState([]);
+
+    const weekListDay = [
+        {
+            name: getWeekListDay?.adc?.name,
+            value: getWeekListDay?.adc?.value,
+            unit: <>&deg;C</>,
+        },
+        {
+            name: getWeekListDay?.bui_p10?.name,
+            value: getWeekListDay?.bui_p10?.value,
+            unit: <>%</>,
+            icon: <IconBui />,
+        },
+        {
+            name: getWeekListDay?.bui_p25?.name,
+            value: getWeekListDay?.bui_p25?.value,
+            unit: <>%</>,
+            icon: <IconBui />,
+        },
+        {
+            name: getWeekListDay?.do_am?.name,
+            value: getWeekListDay?.do_am?.value,
+            unit: <>%</>,
+            icon: <IconDoAm />,
+        },
+        {
+            name: getWeekListDay?.nhiet_do?.name,
+            value: getWeekListDay?.nhiet_do?.value,
+            unit: <>&deg;C</>,
+            icon: <IconNhietDo />,
+        },
+        {
+            name: getWeekListDay?.bui_p10?.name,
+            value: getWeekListDay?.bui_p10?.value,
+            unit: <>%</>,
+            icon: <IconBui />,
+        },
+    ];
+    useEffect(() => {
+        const dbRef = ref(getDatabase());
+
+        const fetchData = async () => {
+            try {
+                const res = await get(child(dbRef, `data`));
+                setGetWeekListDay(res.val());
+                console.log('hihihi', res.val());
+            } catch (error) {
+                console.log(error);
+            }
+        };
+        fetchData();
+    }, [getWeekListDay]);
     return (
         <Container className={styles.box}>
             <Row>
@@ -49,9 +81,12 @@ const Forecast = () => {
                         {/* <CurrentDayDescription /> */}
                         <Row md={3} xs={2}>
                             {weekListDay &&
-                                weekListDay.map &&
+                                weekListDay.length > 0 &&
                                 weekListDay.map((item, index) => (
-                                    <Col key={index} className="d-flex flex-column justify-content-between">
+                                    <Col
+                                        key={index}
+                                        className={`${styles.content} d-flex flex-column justify-content-between`}
+                                    >
                                         <UpcomingDaysForecast data={item} />
                                     </Col>
                                 ))}
