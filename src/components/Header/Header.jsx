@@ -10,7 +10,7 @@ const Header = ({ props }) => {
         { display: 'Giới thiệu', path: '/gioithieu' },
         { display: 'Mô Hình', path: '/mohinh' },
         { display: 'Thiết bị', path: '/thietbi' },
-        { display: 'Liệt kê', path: '/lietke' },
+        // { display: 'Liệt kê', path: '/lietke' },
     ];
     const { pathname } = useLocation();
     const activeNav = mainNav.findIndex(e => e.path === pathname);

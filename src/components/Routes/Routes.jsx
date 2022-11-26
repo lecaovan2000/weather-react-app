@@ -13,7 +13,7 @@ const Routes = () => {
             <Route path="/gioithieu" component={GioiThieu} />
             <Route path="/mohinh" component={MoHinh} />
             <Route path="/thietbi" component={ThietBi} />
-            <Route path="/lietke" component={LietKe} />
+            {/* <Route path="/lietke" component={LietKe} /> */}
         </Switch>
     );
 };
