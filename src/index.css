@@ -10,6 +10,15 @@
     --main-border-radius: 25px;
     --secondary-border-radius: 15px;
 }
+a {
+    text-decoration: none;
+    color: unset;
+}
+a:hover {
+    text-decoration: none;
+    color: unset;
+    border-bottom: #ffffff solid 2px;
+}
 
 body {
     width: 100%;

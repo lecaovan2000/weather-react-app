@@ -10,12 +10,10 @@
     color: var(--main-text-color);
     width: 90%;
     max-width: 1245px;
-    min-height: 570px;
+    min-height: 250px;
+    margin-top: 20px;
 }
 .content {
-    top: 40px;
-}
-.iconWind {
-    color: aliceblue !important;
-    width: 68px;
+    padding: 20px;
+    width: 100%;
 }

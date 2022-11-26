@@ -51,11 +51,24 @@ const CurrentDay = () => {
                     <h4>{getToday}</h4>
                 </div>
                 <div className={styles.remind}>khu vực nhắc nhỡ</div>
-                <div>
-                    <h2 className="font-weight-bold">Nhiệt độ:</h2>
-                    <h2 className="font-weight-bold mb-1 ">
-                        <span>{getData.data?.nhiet_do?.value || '...'}</span>&deg;C
-                    </h2>
+                <div
+                    style={{
+                        display: 'flex',
+                        justifyContent: 'space-between',
+                    }}
+                >
+                    <span>
+                        <h2 className="font-weight-bold">Nhiệt độ</h2>
+                        <h2 className="font-weight-bold mb-1 ">
+                            <span>{getData.data?.nhiet_do?.value || '...'}</span> &deg;C
+                        </h2>
+                    </span>
+                    <span>
+                        <h2 className="font-weight-bold">Độ ẩm</h2>
+                        <h2 className="font-weight-bold mb-1 ">
+                            <span>{getData.data?.do_am?.value || '...'}</span> %
+                        </h2>
+                    </span>
                 </div>
             </div>
         </div>

@@ -8,3 +8,41 @@
 .light {
     font-weight: 100;
 }
+.header {
+    margin: auto;
+    background-color: #343d4b;
+    /* position: fixed; */
+    top: 0;
+    left: 0;
+    width: 82%;
+    z-index: 99;
+    height: 80px;
+    transition: height 0.3s ease;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+}
+.container {
+    height: 100%;
+}
+.header__logo {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.img__logo {
+    height: 28px;
+}
+
+.header__menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    font-size: 1.5rem;
+}
+.active {
+    border-bottom: #ffffff solid 2px;
+}

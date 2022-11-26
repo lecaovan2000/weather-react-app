@@ -2,19 +2,19 @@ import { Container, Row, Col } from 'react-bootstrap';
 
 import styles from './Forecast.module.css';
 import '../../server/firebase';
-import CurrentDay from '../CurrentDay';
 import UpcomingDaysForecast from '../UpcomingDaysForecast';
 
-import IconNhietDo from '../icons/IconNhietDo';
+import CurrentDay from '../CurrentDay';
 import IconBui from '../icons/IconBui';
 import IconDoAm from '../icons/IconDoAm';
+import IconWind from '../icons/IconWind';
 
 import '../../server/firebase';
 import { getDatabase, ref, child, get } from 'firebase/database';
 
 import { useState, useEffect } from 'react';
 
-const Forecast = () => {
+const Forecast = ({ currentDay }) => {
     const [getWeekListDay, setGetWeekListDay] = useState([]);
 
     const weekListDay = [
@@ -33,7 +33,7 @@ const Forecast = () => {
             name: getWeekListDay?.bui_p25?.name,
             value: getWeekListDay?.bui_p25?.value,
             unit: <>%</>,
-            icon: <IconBui />,
+            icon: <IconBui className={styles.iconWind} />,
         },
         {
             name: getWeekListDay?.do_am?.name,
@@ -45,7 +45,7 @@ const Forecast = () => {
             name: getWeekListDay?.nhiet_do?.name,
             value: getWeekListDay?.nhiet_do?.value,
             unit: <>&deg;C</>,
-            icon: <IconNhietDo />,
+            icon: <IconWind />,
         },
         {
             name: getWeekListDay?.bui_p10?.name,
@@ -77,21 +77,18 @@ const Forecast = () => {
                     </div>
                 </Col>
                 <Col xs={12} md={8} className="d-flex flex-column justify-content-between">
-                    <div>
-                        {/* <CurrentDayDescription /> */}
-                        <Row md={3} xs={2}>
-                            {weekListDay &&
-                                weekListDay.length > 0 &&
-                                weekListDay.map((item, index) => (
-                                    <Col
-                                        key={index}
-                                        className={`${styles.content} d-flex flex-column justify-content-between`}
-                                    >
-                                        <UpcomingDaysForecast data={item} />
-                                    </Col>
-                                ))}
-                        </Row>
-                    </div>
+                    <Row md={3} xs={2}>
+                        {weekListDay &&
+                            weekListDay.length > 0 &&
+                            weekListDay.map((item, index) => (
+                                <Col
+                                    key={index}
+                                    className={`${styles.content} d-flex flex-column justify-content-between`}
+                                >
+                                    <UpcomingDaysForecast data={item} />
+                                </Col>
+                            ))}
+                    </Row>
                 </Col>
             </Row>
         </Container>
