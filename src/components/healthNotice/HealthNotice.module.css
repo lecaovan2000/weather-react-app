@@ -20,12 +20,16 @@
     min-height: auto;
     padding: 5px;
 }
+.healthItem:hover {
+    background-color: rgba(255, 255, 255, 0.258);
+}
 .healthItem_content {
     display: flex;
     justify-content: space-between;
     padding: 3px;
     text-align: center;
     align-items: center;
+    cursor: default;
 }
 .healthItem_content__icon {
     background-color: rgba(0, 0, 0, 0.2);
