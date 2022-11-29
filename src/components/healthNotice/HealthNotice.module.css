@@ -1,0 +1,42 @@
+.box {
+    border-radius: 8px;
+    -webkit-box-shadow: 0 0 70px -10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 70px -10px rgba(0, 0, 0, 0.2);
+    background-color: rgba(20, 20, 20, 0.422);
+    color: var(--main-text-color);
+    max-width: 345px;
+    min-height: auto;
+    padding: 5px;
+    margin: auto;
+}
+.healthItem {
+    margin-top: 5px;
+    border-radius: 8px;
+    -webkit-box-shadow: 0 0 70px -10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 70px -10px rgba(0, 0, 0, 0.2);
+    background-color: rgba(255, 255, 255, 0.134);
+    color: var(--main-text-color);
+    max-width: 345px;
+    min-height: auto;
+    padding: 5px;
+}
+.healthItem_content {
+    display: flex;
+    justify-content: space-between;
+    padding: 3px;
+    text-align: center;
+    align-items: center;
+}
+.healthItem_content__icon {
+    background-color: rgba(0, 0, 0, 0.2);
+    width: 35px;
+    height: 35px;
+    border-radius: 4px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+.healthItem_content__name {
+    display: flex;
+    width: 30%;
+}

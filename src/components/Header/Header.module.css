@@ -10,11 +10,11 @@
 }
 .header {
     margin: auto;
-    background-color: #343d4b;
+    background-color: rgba(255, 255, 255, 0.08);
     /* position: fixed; */
     top: 0;
     left: 0;
-    width: 82%;
+    width: 100%;
     z-index: 99;
     height: 80px;
     transition: height 0.3s ease;
@@ -22,7 +22,9 @@
     border-top-right-radius: 16px;
 }
 .container {
+    margin: auto;
     height: 100%;
+    width: 82%;
 }
 .header__logo {
     position: absolute;

@@ -3,6 +3,7 @@ import locationIcon from './assets/location-pin.png';
 import styles from './CurrentDay.module.css';
 import '../../server/firebase';
 import { getDatabase, ref, child, get } from 'firebase/database';
+import HealthNotice from '../healthNotice/HealthNoti';
 
 const CurrentDay = () => {
     const [getData, setGetData] = useState([]);
@@ -50,7 +51,11 @@ const CurrentDay = () => {
                     </h2>
                     <h4>{getToday}</h4>
                 </div>
-                <div className={styles.remind}>khu vực nhắc nhỡ</div>
+
+                <div className={styles.remind}>
+                    <HealthNotice />
+                </div>
+
                 <div
                     style={{
                         display: 'flex',

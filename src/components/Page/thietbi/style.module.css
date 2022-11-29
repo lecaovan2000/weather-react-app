@@ -16,7 +16,7 @@
     width: 100%;
     padding: 20px;
     text-indent: 15px;
-    text-transform: capitalize;
+    /* text-transform: capitalize; */
     font-weight: 400;
     word-break: break-word;
     font-size: 1.25rem;

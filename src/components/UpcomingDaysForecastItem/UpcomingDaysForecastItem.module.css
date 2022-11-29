@@ -2,6 +2,7 @@
     width: 200px;
     height: 250px;
     border-radius: var(--secondary-border-radius);
+    background: rgba(97, 96, 96, 0.088);
 }
 
 .weekday:hover {
