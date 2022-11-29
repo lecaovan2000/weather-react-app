@@ -6,7 +6,7 @@
     border-radius: var(--main-border-radius);
     -webkit-box-shadow: 0 0 70px -10px rgba(0, 0, 0, 0.2);
     box-shadow: 0 0 70px -10px rgba(0, 0, 0, 0.2);
-    background-color: var(--bg-color--card);
+    background-color: rgb(37 35 35 / 50%);
     color: var(--main-text-color);
     width: 90%;
     max-width: 1245px;

@@ -3,17 +3,21 @@
 }
 
 .box {
-    border-radius: var(--main-border-radius);
+    /* border-radius: var(--main-border-radius); */
     -webkit-box-shadow: 0 0 70px -10px rgba(0, 0, 0, 0.2);
     box-shadow: 0 0 70px -10px rgba(0, 0, 0, 0.2);
-    background-color: var(--bg-color--card);
+    background-color: rgba(0, 0, 0, 0.86);
     color: var(--main-text-color);
-    width: 90%;
-    max-width: 1245px;
-    min-height: 250px;
+    /* width: 100%; */
+    max-width: 1545px;
+    min-height: 150px;
     margin-top: 20px;
 }
 .content {
     padding: 20px;
     width: 100%;
+}
+.container {
+    width: 83%;
+    margin: auto;
 }
