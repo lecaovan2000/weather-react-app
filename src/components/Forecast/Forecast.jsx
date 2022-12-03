@@ -19,39 +19,33 @@ const Forecast = ({ currentDay }) => {
 
     const weekListDay = [
         {
-            name: getWeekListDay?.adc?.name,
-            value: getWeekListDay?.adc?.value,
-            unit: <>&deg;C</>,
-        },
-        {
-            name: getWeekListDay?.bui_p10?.name,
-            value: getWeekListDay?.bui_p10?.value,
+            name: 'Bụi PM10',
+            value: getWeekListDay?.bui_p10,
             unit: <>%</>,
             icon: <IconBui />,
         },
         {
-            name: getWeekListDay?.bui_p25?.name,
-            value: getWeekListDay?.bui_p25?.value,
+            name: 'Bụi PM25',
+            value: getWeekListDay?.bui_p25,
             unit: <>%</>,
             icon: <IconBui className={styles.iconWind} />,
         },
         {
-            name: getWeekListDay?.do_am?.name,
-            value: getWeekListDay?.do_am?.value,
+            name: 'Gió',
+            value: getWeekListDay?.toc_do_gio,
             unit: <>%</>,
             icon: <IconDoAm />,
         },
         {
-            name: getWeekListDay?.nhiet_do?.name,
-            value: getWeekListDay?.nhiet_do?.value,
+            name: 'Mưa',
+            value: getWeekListDay?.Mua,
             unit: <>&deg;C</>,
             icon: <IconWind />,
         },
         {
-            name: getWeekListDay?.bui_p10?.name,
-            value: getWeekListDay?.bui_p10?.value,
-            unit: <>%</>,
-            icon: <IconBui />,
+            name: 'UV',
+            value: getWeekListDay?.UV,
+            unit: <>&deg;C</>,
         },
     ];
     useEffect(() => {
@@ -61,7 +55,6 @@ const Forecast = ({ currentDay }) => {
             try {
                 const res = await get(child(dbRef, `data`));
                 setGetWeekListDay(res.val());
-                console.log('hihihi', res.val());
             } catch (error) {
                 console.log(error);
             }

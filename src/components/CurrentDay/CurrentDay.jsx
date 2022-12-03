@@ -44,7 +44,7 @@ const CurrentDay = () => {
                 <div>
                     <h2 className="font-weight-bold mb-1">
                         <span>
-                            <img className={styles.customImg} src={locationIcon} />
+                            <img className={styles.customImg} src={locationIcon} alt="#" />
                         </span>
                         {''}
                         <span> Ho Chi Minh</span>
@@ -65,13 +65,13 @@ const CurrentDay = () => {
                     <span>
                         <h2 className="font-weight-bold">Nhiệt độ</h2>
                         <h2 className="font-weight-bold mb-1 ">
-                            <span>{getData.data?.nhiet_do?.value || '...'}</span> &deg;C
+                            <span>{getData.data?.nhiet_do || '...'}</span> &deg;C
                         </h2>
                     </span>
                     <span>
                         <h2 className="font-weight-bold">Độ ẩm</h2>
                         <h2 className="font-weight-bold mb-1 ">
-                            <span>{getData.data?.do_am?.value || '...'}</span> %
+                            <span>{getData.data?.do_am || '...'}</span> %
                         </h2>
                     </span>
                 </div>

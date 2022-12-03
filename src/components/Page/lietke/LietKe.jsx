@@ -14,18 +14,6 @@ const LietKe = () => {
                 </Col>
                 <Col xs={12} md={8} className="d-flex flex-column justify-content-between">
                     <h1> Trang page Liệt Kê</h1>
-                    {/* <Row md={3} xs={2}>
-                {weekListDay &&
-                    weekListDay.length > 0 &&
-                    weekListDay.map((item, index) => (
-                        <Col
-                            key={index}
-                            className={`${styles.content} d-flex flex-column justify-content-between`}
-                        >
-                            <UpcomingDaysForecast data={item} />
-                        </Col>
-                    ))}
-            </Row> */}
                 </Col>
             </Row>
         </Container>

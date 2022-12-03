@@ -1,7 +1,6 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import styles from './style.module.css';
-import CurrentDay from '../../CurrentDay';
 import img1 from './img1.jpg';
 import img2 from './img2.jpg';
 import img3 from './img3.jpg';

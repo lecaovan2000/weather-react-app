@@ -1,10 +1,9 @@
-import { Container, Row, Col } from 'react-bootstrap';
+import { Row, Col } from 'react-bootstrap';
 import styles from './footer.module.css';
-import logoIuh from '../../logo-iuh.jpg';
 
 const Footer = () => {
     return (
-        <Container className={styles.box}>
+        <div className={styles.box}>
             <div className={styles.container}>
                 <Row>
                     <Col md={6} className={styles.content} style={{ alignItems: 'center', paddingTop: '25px' }}>
@@ -45,7 +44,7 @@ const Footer = () => {
                     </Col>
                 </Row>
             </div>
-        </Container>
+        </div>
     );
 };
 
