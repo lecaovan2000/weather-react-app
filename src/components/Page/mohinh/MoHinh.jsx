@@ -2,7 +2,7 @@ import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import styles from './style.module.css';
 import bad from './3d.png';
-import imgtt from './thucte.png';
+import imgtt from './mohinhchinh.jpg';
 
 const MoHinh = () => {
     return (
