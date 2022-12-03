@@ -45,6 +45,9 @@
     height: 100%;
     font-size: 1.5rem;
 }
+.hover:hover {
+    border-bottom: #ffffff solid 2px;
+}
 .active {
     border-bottom: #ffffff solid 2px;
 }

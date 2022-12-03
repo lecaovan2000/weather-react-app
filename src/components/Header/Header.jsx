@@ -18,7 +18,7 @@ const Header = ({ props }) => {
                 <div className={styles.container}>
                     <div className={styles.header__menu}>
                         {mainNav.map((items, index) => (
-                            <div key={index} className={index === activeNav ? styles.active : ''}>
+                            <div key={index} className={index === activeNav ? styles.active : styles.hover}>
                                 <Link to={items.path}>
                                     <span>{items.display}</span>
                                 </Link>

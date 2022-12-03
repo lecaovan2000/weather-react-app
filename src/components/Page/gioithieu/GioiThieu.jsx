@@ -2,6 +2,7 @@ import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import styles from './style.module.css';
 import imgIot from './img.png';
+import ChartInfo from '../../chartInfo/ChartInfo';
 
 const GioiThieu = () => {
     return (

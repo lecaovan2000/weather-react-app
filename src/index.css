@@ -17,7 +17,7 @@ a {
 a:hover {
     text-decoration: none;
     color: unset;
-    border-bottom: #ffffff solid 2px;
+    /* border-bottom: #ffffff solid 2px; */
 }
 
 body {

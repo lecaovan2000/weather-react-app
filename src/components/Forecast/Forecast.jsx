@@ -8,11 +8,13 @@ import CurrentDay from '../CurrentDay';
 import IconBui from '../icons/IconBui';
 import IconDoAm from '../icons/IconDoAm';
 import IconWind from '../icons/IconWind';
+import IconUV from '../icons/IconUV';
 
 import '../../server/firebase';
 import { getDatabase, ref, child, get } from 'firebase/database';
 
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 const Forecast = ({ currentDay }) => {
     const [getWeekListDay, setGetWeekListDay] = useState([]);
@@ -23,29 +25,35 @@ const Forecast = ({ currentDay }) => {
             value: getWeekListDay?.bui_p10,
             unit: <>%</>,
             icon: <IconBui />,
+            path: 'bui_pm10',
         },
         {
             name: 'Bụi PM25',
             value: getWeekListDay?.bui_p25,
             unit: <>%</>,
+            path: 'bui_pm25',
             icon: <IconBui className={styles.iconWind} />,
         },
         {
             name: 'Gió',
             value: getWeekListDay?.toc_do_gio,
-            unit: <>%</>,
-            icon: <IconDoAm />,
+            unit: <>m/s</>,
+            icon: <IconWind />,
+            path: 'gio',
         },
         {
-            name: 'Mưa',
-            value: getWeekListDay?.Mua,
-            unit: <>&deg;C</>,
-            icon: <IconWind />,
+            name: ' Cảm biến mưa',
+            value: getWeekListDay?.Mua === 1 ? 'Có mưa' : 'Không mưa',
+            unit: <></>,
+            icon: <IconDoAm />,
+            path: 'mua',
         },
         {
             name: 'UV',
             value: getWeekListDay?.UV,
-            unit: <>&deg;C</>,
+            unit: <>mW/cm2</>,
+            path: 'uv',
+            icon: <IconUV />,
         },
     ];
     useEffect(() => {
@@ -78,7 +86,9 @@ const Forecast = ({ currentDay }) => {
                                     key={index}
                                     className={`${styles.content} d-flex flex-column justify-content-between`}
                                 >
-                                    <UpcomingDaysForecast data={item} />
+                                    <Link to={item.path}>
+                                        <UpcomingDaysForecast data={item} />
+                                    </Link>
                                 </Col>
                             ))}
                     </Row>

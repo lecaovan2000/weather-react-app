@@ -5,6 +5,8 @@ import GioiThieu from '../Page/gioithieu/GioiThieu';
 import MoHinh from '../Page/mohinh/MoHinh';
 import ThietBi from '../Page/thietbi/ThietBi';
 
+import SensorBui from '../Page/detailSensor/SensorBui';
+
 const Routes = () => {
     return (
         <Switch>
@@ -12,6 +14,7 @@ const Routes = () => {
             <Route path="/gioithieu" component={GioiThieu} />
             <Route path="/mohinh" component={MoHinh} />
             <Route path="/thietbi" component={ThietBi} />
+            <Route path="/bui_pm10" component={SensorBui} />
         </Switch>
     );
 };

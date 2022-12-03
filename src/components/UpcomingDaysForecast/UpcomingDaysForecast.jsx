@@ -5,7 +5,7 @@ import UpcomingDaysForecastItem from '../UpcomingDaysForecastItem';
 
 const UpcomingDaysForecast = ({ data }) => {
     return (
-        <ul className={`${styles.weekList} d-flex justify-content-between p-0`}>
+        <ul to className={`${styles.weekList} d-flex justify-content-between p-0`}>
             <UpcomingDaysForecastItem weekListDay={data} />
         </ul>
     );
