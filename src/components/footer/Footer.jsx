@@ -1,4 +1,5 @@
 import { Row, Col } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import styles from './footer.module.css';
 
 const Footer = () => {
@@ -18,11 +19,18 @@ const Footer = () => {
                         </span>
                     </Col>
                     <Col md={3} className={styles.content} style={{ textAlign: 'center', alignItems: 'center' }}>
-                        {' '}
-                        <p>Trang chủ</p>
-                        <p>Giới thiệu</p>
-                        <p>Mô hình</p>
-                        <p>Thiết bị</p>
+                        <p>
+                            <Link to="/">Trang chủ</Link>
+                        </p>
+                        <p>
+                            <Link to="gioithieu">Giới thiệu</Link>
+                        </p>
+                        <p>
+                            <Link to="mohinh">Mô hình</Link>
+                        </p>
+                        <p>
+                            <Link to="thietbi">Thiết bị</Link>
+                        </p>
                     </Col>
                     <Col md={3} className={styles.content} style={{ textAlign: 'center', alignItems: 'center' }}>
                         <p>
