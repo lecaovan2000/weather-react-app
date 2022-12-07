@@ -23,14 +23,14 @@ const Forecast = ({ currentDay }) => {
         {
             name: 'Bụi PM10',
             value: getWeekListDay?.bui_p10,
-            unit: <>%</>,
+            unit: <>μg/m3</>,
             icon: <IconBui />,
             path: 'bui_pm10',
         },
         {
             name: 'Bụi PM25',
             value: getWeekListDay?.bui_p25,
-            unit: <>%</>,
+            unit: <>μg/m3</>,
             path: 'bui_pm25',
             icon: <IconBui className={styles.iconWind} />,
         },
